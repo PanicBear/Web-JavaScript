@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">                     /* CSS */
+        #selected {
+            color: red;
+        }
+        .dark {                                 /* class */
+            background-color: black;
+            color: white;
+        }
+        .dark #selected {                       /* 하위 태그 중 selected인 것 */
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>                                          <!-- 버튼 클릭시 <body class = 'dark'>와 동일 -->       
+    <ul>                                        <!-- HTML -->
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="selected">JavaScript</li>
+    </ul>
+    <input type="button" onclick="document.body.className='dark'" value="dark" />       <!-- JavaScript : onclick~ -->
+</body>
+</html>
+
+<!-- 
+        HTML        정보
+        CSS         디자인
+        JavaScript  웹브라우저, HTML 제어
+ -->
