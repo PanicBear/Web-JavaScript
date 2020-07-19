@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png">
+    <script>
+        var imgs = document.getElementsByTagName('img');
+        console.log(imgs);
+        console.log(imgs[0]);
+        imgs[0].style.width = '300px';
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    getElementsByTagName은 해당되는 모든 태그를 반환
+        복수 반환하기에 배열, 필요한 이미지 인덱스 정해야
+
+    style은 css 수정
+        HTML로 렌더링된 이후, 스타일 변경 시
+        해당 객체를 찾아 js로 변경해야
+
+ -->
+
+ <!-- 
+        window(전역객체)    
+
+            DOM - document  object  model
+            
+                document        (window 객체의 프로퍼티)
+                    <body>
+                    <img> 
+
+
+            BOM - browser   object  model
+                    
+                navigator       (window 객체의 프로퍼티)
+                screen          (window 객체의 프로퍼티)
+                location        (window 객체의 프로퍼티)
+                frames          (window 객체의 프로퍼티)
+                history         (window 객체의 프로퍼티)
+                XMLHttpRequset  (window 객체의 프로퍼티)
+
+
+            JSC - JavaScript Core
+
+                호스트 환경 : Browser, GoogleAppsScript, node.js
+
+                    Object
+                    Array
+                    Function
+
+                        Date 같은 공통기능
+                        언어 자체에 정의되어 있는 객체
+
+  -->
