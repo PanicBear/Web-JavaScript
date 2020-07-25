@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 프로토콜의 종류 
+        // http, https, file(지금 같은 경우)
+        // 'https'://opentutorials.org/course/1375/6634
+        console.log(location.protocol);
+
+        // https://'opentutorials.org'/course/1375/6634
+        // 도메인(서비스 컴퓨터의 식별 주소)
+        console.log(location.host);
+
+        // 서버 소프트웨어 식별용 포트넘버
+        // https://opentutorials.org':80'/course/1375/6634
+        console.log(location.port);
+
+        // 웹서버 요청 내용(도메인 이후 url)
+        // https://opentutorials.org/'course/1375/6634;
+        console.log(location.pathname);
+
+        // url 내에 ?가 있을 경우, 그 이후의 url
+        //https://opentutorials.org/course/1375/6634/'?id=1'#hash
+        console.log(location.search);
+
+        // 문서 내의 특정 위치가 북마크된 경우, 반환
+        //https://opentutorials.org/course/1375/6634/?id=1'#hash'
+        console.log(location.hash);
+    </script>
+</body>
+</html>
