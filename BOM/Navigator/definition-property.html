@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 크로스 브라우징
+        // 다양한 브라우저의 동작방법은
+        // W3C, ECMA 등의 국제 규격에 의해 규정
+        // 하지만 디테일한 경우는 브라우저 재량
+        //     -> 브라우저마다 다른 결과가 발생 할 수 있음
+        // 해당 문제를 해결하기 위해 사용되는 객체가 navigator
+
+
+        // 객체가 가진 프로퍼티 목록 열람
+        console.dir(navigator);
+
+        // 파이어폭스, 크롬 등은 Netscape 반환(계승했다나 뭐라나)
+        console.dir(navigator.appName);
+
+        // 정확한 브라우저 정보 및 운영체제 정보
+        // 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36 
+        console.dir(navigator.appVersion);
+
+        // AppVersion과 내용이 같으나, 브라우저에 따라 상이할 가능성 존재
+        // 브라우저가 서버에 네트워크로 접속 시 서버에 전달하는 내용
+        // Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+        console.dir(navigator.userAgent);
+
+        // 브라우저가 동작하는 운영체제 정보
+        console.dir(navigator.platform);
+    </script>
+</body>
+
+</html>
+console.dir(navigator);
