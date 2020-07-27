@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #demo {
+            width: 200px;
+            float: left;
+            margin-top: 120px;
+        }
+
+        #execute {
+            float: left;
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        #execute {
+            padding-left: 5px
+        }
+
+        #execute li {
+            list-style: none
+        }
+
+        #execute pre {
+            border: 1px solid gray;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="demo">
+        <li class="active">HTML</li>
+        <li id="active">CSS</li>
+        <li class="active">JavaScript</li>
+    </ul>
+    <ul id="execute">
+        <li>
+            <pre>
+                <!-- DOM으로 작성했을 경우 코드 -->
+                var lis = document.getElementsByTagName('li');
+                for(var i=0; i&lt;lis.length; i++){
+                    lis[i].style.color='red';   
+            </pre>
+            <pre>
+                <!-- JQuery 코드 -->
+                <!-- id = 그냥 타이핑 -->
+                $('li').css('color', 'red')     
+            </pre>
+            <input type="button" value="execute" onclick="$('li').css('color', 'red')" />
+        </li>
+        <li>
+            <pre>
+                <!-- DOM으로 작성했을 경우 코드 -->
+                var lis = document.getElementsByClassName('active');
+                for(var i=0; i &lt; lis.length; i++){
+                    lis[i].style.color='red';   
+                }
+            </pre>
+            <pre>
+                <!-- JQuery 코드 -->
+                <!-- class = .~ -->
+                $('.active').css('color', 'red')
+            </pre>
+            <input type="button" value="execute" onclick="$('.active').css('color', 'red')" />
+        </li>
+        <li>
+            <pre>
+                <!-- DOM으로 작성했을 경우 코드 -->
+                var li = document.getElementById('active');
+                li.style.color='red';
+                li.style.textDecoration='underline';</pre>
+            <pre>
+                <!-- JQuery 코드 -->
+                <!-- id = $~ -->
+                $('$active').css('color', 'red').css('textDecoration', 'underline');
+            </pre>
+            <!-- 반환한 jQuery 객체를 체인 css().css() -->
+            <input type="button" value="execute"
+                onclick="$('#active').css('color', 'red').css('textDecoration', 'underline')" />
+        </li>
+    </ul>
+    <script src="../../lib/jquery-3.5.1.min.js"></script>
+</body>
+
+</html>
+
+<!-- 
+    반복문 사용 없이도 전체 요소에 적용할 수 있기에 코드 단축 가능
+-->
