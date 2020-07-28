@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id = "anchor"  href="http:opentutorials.org">opentutorials</a>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id = "list">JavaScript</li>
+    </ul>
+    <input type="button" id = "button" value="button">
+    <script>
+        // 요소(태그)의 종류에 따라 반환되는 객체의 종류가 조금씩 상이하다
+        // 객체별로 프로퍼티가 상이하나, 모든 객체는 HTMLElement를 상속받고 있다.
+        var target = document.getElementById('list');
+        console.log(target.constructor.name);               // HTML'LI'Element
+        target.type = 'square';                             // HTMLLIElement의 프로퍼티 'type'을 통해 리스트 모양 변경
+
+        var target = document.getElementById('anchor');
+        console.log(target.constructor.name);               // HTML'Anchor'Element
+        target.href = "https://www.naver.com";              // HTMLAnchorElement의 프로퍼티 'href'를 통해 링크 변경
+
+        var target = document.getElementById('button');     
+        console.log(target.constructor.name);               // HTML'Input'Element
+
+        // DOM 스펙
+        
+        // HTMLLIElement
+        // http://www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109/html.html#ID-74680021
+        
+        // HTMLAnchorElement
+        // http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-48250443
+        
+        // HTMLInputElement
+        // http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-6043025
+    </script>
+</body>
+</html>
+

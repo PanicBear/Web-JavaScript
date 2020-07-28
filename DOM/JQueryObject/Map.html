@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <script src="../../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        // map
+            // 함수를 인자로 받는 메서드
+            // 각 요소를 순회할 때마다 함수 호출
+            // index - 순서
+            // elem - li
+        var li = $('li');
+        li.map(function(index, elem){
+            console.log(index, elem);
+            console.log(elem.constructor.name);     // DOM 객체가 반환됨
+            $(elem).css('color', 'red');
+        })
+        // jQuery api doc
+        // https://api.jquery.com/
+    </script>
+</body>
+</html>

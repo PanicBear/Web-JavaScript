@@ -1,0 +1,17 @@
+(Object)
+Node
+    Attr
+    Element
+        HTMLElement
+            HTMLHeadElement
+            HTMLBodyElement
+            HTMLTitleElement
+            HTMLParagraphElement
+            HTMLInputElement
+            HTMLTableElement
+            etc..
+    CharaterData
+        Text
+        Comment
+    Document
+        HTMLDocument
