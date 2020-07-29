@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id='t1' href="../demo2.html"></a>
+    <input type="checkbox" id="t2" checked="checked">
+    <script src="../../../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        var t1 = $('#t1');
+        console.log(t1.attr('href'));       // 상대주소
+        console.log(t1.prop('href'));       // 절대주소(url)
+
+        var t2 = $('#t2');
+        console.log(t2.attr('checked'));    // checked
+        console.log(t2.prop('checked'));    // true
+    </script>
+</body>
+</html>

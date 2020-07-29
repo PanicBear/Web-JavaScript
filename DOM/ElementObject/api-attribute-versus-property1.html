@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "target">
+        Hello World
+    </p>
+    <script>
+        var target = document.getElementById('target');
+        // attribute 방식
+        target.setAttribute('class', 'important');
+        console.log(target.className);
+
+        // property 방식
+        target.className = 'important';
+        console.log(target.className);
+
+        // property 방식이 간편하고 빠르나
+        // html 속성의 이름과 다른 이름을 갖는 경우 존재(자바스크립트 작명규칙)
+        // 속성과 프로퍼티의 값이 다른 경우도 존재
+    </script>
+</body>
+</html>

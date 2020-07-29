@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a id="target" href="./demo2.html">ot</a>
+    <script>
+        var target = document.getElementById('target');
+        
+        // 실제 주소 반환(주소창 url)
+        console.log('target.href', target.href);
+        
+        // 입력한 상대 주소 반환
+        console.log('target.getAttribute("href")', target.getAttribute("href"));
+
+        // Element를 제어하는 방식에 따라 차이가 발생하는 경우가 존재
+    </script>
+</body>
+
+</html>

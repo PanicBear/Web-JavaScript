@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <a id="target" href="https://www.opentutorials.org/course/1375/6696">opentutorials</a>    
+    <script src="../../../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        var t = $('#target');
+        console.log(t.attr('href'));    // element객체의 setAttribute와 동일
+
+        t.attr('title', 'opentutorials.org');   // 링크 위에 커서 올리는 경우 나타나는 도움말
+        t.removeAttr('title');
+    </script>
+</body>
+</html>

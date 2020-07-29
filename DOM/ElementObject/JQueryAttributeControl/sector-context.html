@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li class="marked">HTML</li>
+        <li>CSS</li>
+        <li id="active">JavaScript
+            <ul>
+                <li>JavaScript Core</li>
+                <li class="marked">DOM</li>
+                <li class="marked">BOM</li>
+            </ul>
+        </li>
+    </ul>
+    <script src="../../../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        // 선택자 작성방법 두 가지
+        // $("#active .marked").css("background-color", "red");
+        $(".marked", "#active").css("background-color", "red");
+    </script>
+</body>
+
+</html>
+<!--
+    이것과 실행 결과가 동일
+    <ul>
+    <li class="marked">html</li>
+    <li>css</li>
+    <li id="active">JavaScript
+        <ul>
+            <li>JavaScript Core</li>
+            <li class="marked" style="background-color: red;">DOM</li>
+            <li class="marked" style="background-color: red;">BOM</li>
+        </ul>
+    </li>
+    </ul>
+-->
