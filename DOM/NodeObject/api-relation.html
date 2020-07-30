@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body><ul>같이 줄바꿈 안하고 작성 시 ul이 첫 자식-->    
+                    <!-- 여기에 줄바꿈문자가 #text로 첫 자식 됨-->
+<body id = 'start'> 
+    <ul>            
+        <li><a href="./532">HTML</a></li>
+        <li><a href="./533">CSS</a></li>
+        <li><a href="./535">JavaScript</a>
+            <ul>
+                <li><a href="./535">JavaScript Core</a></li>
+                <li><a href="./536">DOM</a></li>
+                <li><a href="./537">BOM</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var s = document.getElementById("start");
+        console.log(1, s.firstChild);                   // #text
+
+        var ul = s.firstChild.nextSibling;
+        console.log(2, ul);                             // ul    
+        console.log(3, ul.nextSibling);                 // #text(또 줄바꿈)
+        console.log(4, ul.nextSibling.nextSibling);     // script(같은 레벨의 child)
+        console.log(5, ul.childNodes);                  // NodeList(7) - text, li, text, li, text, li, text
+        
+        // s.firstChild.nextSibling.firstChild.nextSibling과 동일한 결과
+        console.log(6, ul.childNodes[1]);               // li(HTML)
+        console.log(7, ul.parentNode);                  // body - 한 단계 상위 노드(항상 최상위 아니고)
+
+        // i++로 돌리면 줄바꿈 문자에 에러나옴
+        for(var i = 1; i<s.childNodes.length;i+=2){
+            s.childNodes[i].style.color="red";
+        }
+        // nextSibling과 쌍을 이루는 previousSibling
+    </script>
+</body>
+</html>

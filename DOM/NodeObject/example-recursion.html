@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="start">
+    <ul>
+        <li><a href="./532">html</a></li>
+        <li><a href="./533">css</a></li>
+        <li><a href="./534">JavaScript</a>
+            <ul>
+                <li><a href="./535">JavaScript Core</a></li>
+                <li><a href="./536">DOM</a></li>
+                <li><a href="./537">BOM</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script>
+    // 함수를 다른 함수의 인자로 전달하여 값으로 사용 가능
+    function traverse(target, callback) {
+        if (target.nodeType === Node.ELEMENT_NODE) {
+            if (target.nodeName === 'A') 
+            callback(target);                           // 콜백을 통해 함수를 내부적으로 호출
+            var c = target.childNodes;
+            for (var i = 0; i < c.length; i++) {
+                traverse(c[i], callback);
+            }
+        }
+    }
+
+    // (body 전달, 현재 순환 중인 element를 익명함수 전달)
+    traverse(document.getElementById("start"), function (elem) {
+        console.log(elem);
+        if (elem.nodeName === 'A') {
+            elem.style.backgroundColor = "blue";
+        }
+        elem.style.color = 'red';
+    })
+</script>
+
+</html>
