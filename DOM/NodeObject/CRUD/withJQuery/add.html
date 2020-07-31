@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- before -->
+    <div class="target">
+        <!-- prepend -->
+        content1
+        <!-- append -->
+    </div>
+    <!-- after -->
+
+    <!-- before -->
+    <div class="target">
+        <!-- prepend -->
+        content2
+        <!-- append -->
+    </div>
+    <!-- before -->
+
+    <script src="../../../../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        $('.target').before('<div>before</div>');
+        $('.target').after('<div>after</div>');
+        $('.target').prepend('<div>prepend</div>');
+        $('.target').append('<div>append</div>');
+
+        /*
+                before          형제로 들어감
+            -----------------
+            |    prepend    |   자식으로 들어감
+            |   ---------   |
+            |   |content|   |
+            |   ---------   |
+            |    append     |   자식으로 들어감
+            -----------------
+                after           형제로 들어감
+        */
+    </script>
+</body>
+
+</html>

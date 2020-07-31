@@ -12,10 +12,13 @@
         <li>HTML</li>
         <li>CSS</li>
     </ul>
-    <input type="button" onclick = "callAppendChild()" value="appendChild()">
-    <input type="button" onclick = "callInsertBefore()" value="insertBefore()">
+    <input type="button" onclick="callAppendChild()" value="appendChild()">
+    <input type="button" onclick="callInsertBefore()" value="insertBefore()">
     <script>
-        function callAppendChild(){
+        // 엘리먼트 추가는 Node 메서드를 통해 하지만, 삽입할 document(element) 객체를 생성해야 함
+
+        // 밑에 엘리먼트 추가
+        function callAppendChild() {
             var target = document.getElementById('target');
             var li = document.createElement('li');
             var text = document.createTextNode("JavaScript");
@@ -23,9 +26,10 @@
             target.appendChild(li);     // 이건 두번째 매개변수 자리 없어서 무조건 후순위추가인듯
         }
 
-        function callInsertBefore(){
+        // 맨 앞에 엘리먼트 추가
+        function callInsertBefore() {
             var target = document.getElementById("target");
-            var li =document.createElement("li");
+            var li = document.createElement("li");
             var text = document.createTextNode("jQuery");
             li.appendChild(text);
             target.insertBefore(li, target.firstChild);     // 참조하는 두번째 매개변수 위치에 첫번째 매개변수 추가 현재는 줄바꿈 표시

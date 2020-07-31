@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="target">
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
+    <input type="button" onclick="get()" value="get">
+    <input type="button" onclick="set()" value="set">
+    <script>
+        function get() {
+            var target = document.getElementById('target');
+            alert(target.outerHTML);                            // 선택한 엘리먼트까지 포함(<ul><ol><li>)
+        }
+        function set() {
+            var target = document.getElementById('target');
+            target.innerHTML = "<ol><li>JavaScript Core</li><li>Bom</li><li>Dom</li></ol>"
+        }
+    </script>
+</body>
+
+</html>
