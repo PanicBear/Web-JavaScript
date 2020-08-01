@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- element -->      <!-- text -->     <!-- element -->
+    <p id="target1"><span>Hello world</span></p>
+    <p id="target2">
+        <span>Hello world</span>
+    </p>
+    <script>
+        var t1 = document.getElementById('target1').firstChild;     // <span>Hello world</span>
+        var t2 = document.getElementById('target2').firstChild;     // 줄바꿈 문자
+
+        console.log(t1.firstChild.data);                       // t1.firstchild = "Hello world"
+        try {
+            console.log(t2.firstChild.nodeValue);                                        // t2.firstchild = null
+        } catch (e) {
+            console.log(e);
+        }
+        console.log(t2.nextSibling);                                // t2.nextSibling = <span>Hello world</span>
+
+        /* 
+            텍스트 노드의 데이터 가져오기
+                data
+                nodeValue
+
+            데이터 조작
+                appendData()
+                deleteData()
+                insertData()
+                replaceData()
+                substringData()
+
+            생성
+                document.createTextNode()
+         */
+    </script>
+</body>
+
+</html>

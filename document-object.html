@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // document 객체는 window 객체 소속
+        console.log(window.document);
+
+        // document 객체의 자식으로는 Doctype과 html이 있다.
+        console.log(window.document.childNodes[0]);
+        console.log(window.document.childNodes[1]);
+
+        console.log(document.title);            
+        console.log(document.URL);              
+        console.log(document.referrer);         // 경유한 사이트
+        console.log(document.lastModified);
+    </script>
+</body>
+
+</html>

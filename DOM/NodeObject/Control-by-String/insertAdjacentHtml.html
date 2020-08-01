@@ -32,6 +32,17 @@
         var target = document.getElementById('target');
         target.insertAdjacentHTML('afterend','<h1>Server Side</h1>');
     }
+    /*
+                beforebegin     형제로 들어감
+            -----------------
+            |   afterbegin  |   자식으로 들어감
+            |   ---------   |
+            |   |content|   |
+            |   ---------   |
+            |   beforeend   |   자식으로 들어감
+            -----------------
+                afterend        형제로 들어감
+        */
     </script>
 </body>
 
