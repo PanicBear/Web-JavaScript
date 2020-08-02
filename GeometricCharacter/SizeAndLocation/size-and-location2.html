@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            border:50px solid #1065e6;
+            padding:50px;
+            margin:50px;
+        }
+        #target{
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id = "target">
+            Coding
+        </div>
+    </div>
+    <script>
+        var t = document.getElementById('target');
+        console.log(t.getBoundingClientRect());         // element가 중첩된 경우에도 해당 element와 body 간의 거리 측정
+        console.log(t.offsetParent);                    // 측정의 기준이 되는 element 반환(body)
+        
+        // CSS position 값이 static인 td, th, table 엘리먼트가 있을 경우, 이것들이 측정의 기준이 됨        
+        //      이걸 바탕으로 적응형 레이아웃을 만드는걸까
+    </script>
+</body>
+</html>

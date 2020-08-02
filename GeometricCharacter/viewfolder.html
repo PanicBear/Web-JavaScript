@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            border: 50px solid #1065e6;
+            padding: 50px;
+            margin: 50px;
+        }
+
+        #target {
+            width: 100px;
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id='target'>
+            Coding
+        </div>
+    </div>
+
+    <script>
+        // viewport란 = 문서가 브라우저보다 클 경우, 사용자에게 보이는 영역
+        // viewport 좌표 = 사용자에게 보여주는 영역의 좌표
+        // 구형 브라우저의 경우 pageYOffset 대신 scrollTop 속성 사용해야함
+
+
+        // setInterval(함수, 시간) - 시간마다 함수 반복 호출
+        var t = document.getElementById('target');
+        setInterval(function () {
+            //getBoundingClientRect = 엘리먼트로부터 뷰포트의 거리 pageYOffset = 스크롤한 정도
+            console.log('getBoundingClientRect : ', t.getBoundingClientRect().top, 'pageYOffset', window.pageYOffset);      
+        }, 1000);
+
+        setInterval(function () {
+            // getBoundingClientRect().top + pageYOffset = document 좌표
+            console.log('getBoundingClientRect : ', t.getBoundingClientRect().top, 'pageYOffset:', window.pageYOffset, 'document y:', t.getBoundingClientRect().top + window.pageYOffset);
+        }, 1000)
+    </script>
+</body>
+
+</html>
