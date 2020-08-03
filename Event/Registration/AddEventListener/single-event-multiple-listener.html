@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id = 'target' value="button with multiple event-istener">
+    <script>
+        // 프로퍼티 방식은 기존 메서드를 갱신시키기 때문에 단일 이벤트 핸들러 밖에 설치 할 수 없다
+
+        // addEventListener의 경우 말 그대로 추가라 다중 핸들러 가능
+        // 유지보수 용이(나중에 나옴)
+
+        var t = document.getElementById('target');
+        t.addEventListener('click', function(){
+            alert('Event #1')
+        })
+        t.addEventListener('click', function(){
+            alert('Event #2')
+        })
+    </script>
+</body>
+</html>
