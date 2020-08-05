@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "result"></p>
+    <input id = "target" type="text"/>
+    <script>
+        var t = document.getElementById('target');
+        t.addEventListener('change', function(event){
+            t.addEventListener('change', function(evnet){
+                document.getElementById('result').innerHTML=evnet.target.value;
+            })
+        });
+
+        // 폼 컨트롤의 값이 변경 되었을 때 발생하는 이벤트
+        // text, radio, checkbox, textarea, select에 적용
+    </script>
+</body>
+</html>
