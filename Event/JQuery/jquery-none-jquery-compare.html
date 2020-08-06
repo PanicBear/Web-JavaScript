@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="pure" value="pure">
+    <input type="button" id="jquery" value="jquery">
+    <script src="../../lib/jquery-3.5.1.min.js"></script>
+    <script>
+        // none jquery
+        var target = document.getElementById('pure');
+        if (target.addEventListener) {
+            target.addEventListener('click', function (event) {
+                alert('pure - addEventListener');
+            })
+        } else {
+            target.attachEvent('onclick', function (evnet) {
+                alert('pure - attachEvent');
+            });
+        }
+
+        // jquery
+        // on(event [, selector] [, data], handler(eventObject))
+        // on('click',                       function(event){})
+        $('#jquery').on('click', function (event) {
+            alert('jQuery');
+        })
+
+        /* 
+            1. 적은 코드
+            2. on api를 이용한 크로스 브라우징 해결
+         */
+    </script>
+</body>
+
+</html>
