@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>time : <span id="time"></span></p>
+    <input type="button" id="execute" value="execute" />
+    <script>
+        document.querySelector('input').addEventListener('click', function (event) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', './time.php');          
+            xhr.onreadystatechange = function () {                                      // 상태 변화에 따라 해당 이벤트 핸들러 호출
+                if (xhr.readyState === 4 && xhr.status === 200) {                       // readyState 4 : 호출 끝남, xhr.status 200 : 통신 성공 시
+                    document.querySelector('#time').innerHTML = xhr.responseText;       // xhr.reponseText : 서버에서 리턴해준 정보
+                }
+            }
+            xhr.send(); // get 방식으로 ./time.php으로 통신
+        }); 
+
+        // GET 방식
+    </script>
+</body>
+
+</html>

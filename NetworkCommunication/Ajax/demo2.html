@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 출력 -->
+    <p>time : <span id="time"></span></p>   
+    <!-- 셀렉트 박스 -->
+    <select id="timezone">                                                     
+        <option value="Asia/Seoul">asia/seoul</option>
+        <option value="America/New_York">America/New_York</option>
+    </select>
+    <select id="format">
+        <option value="Y-m-d H:i:s">Y-m-d H:i:s</option>
+        <option value="Y-m-d">Y-m-d</option>
+    </select>
+    <input type="button" id="execute" value="execute" />
+    <script>
+        document.querySelector('input').addEventListener('click', function (event) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', './time2.php');
+            xhr.onreadystatechange = function () {
+                document.querySelector('#time').innerHTML = xhr.responseText;
+            }
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");  // 데이터 형식 지정
+            var data = '';
+            data += 'timezone=' + document.getElementById('timezone').value;    // 셀렉트 박스 옵션 값
+            data += '&format=' + document.getElementById('format').value;
+            xhr.send(data); // 인자와 함께 데이터 전송
+        });
+
+        // POST 방식
+
+        // timezone=Asia/Seoul&format=Y-m-d
+        // 값과 값을 구분할 때는 &
+        // 값의 이름과 내용을 구분 할 때는 =
+    </script>
+</body>
+
+</html>
