@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var info = '{\
+            "font_face": "Inconsolata",\
+            "font_size": 30,\
+            "ignored_packages": [],\
+            "line_numbers": false\
+        }';
+
+        console.log(info);                          // 문자열
+
+        var jsonInfo = JSON.parse(info);
+        console.log(jsonInfo);                      // JSON 객체로 파싱
+
+        for (const key in jsonInfo) {               // JSON 객체에 각각 프로그래밍적으로 접근 가능
+            console.log(key);
+        }
+
+        var infoJSON = JSON.stringify(jsonInfo);
+        console.log(infoJSON);                      // JSON 객체를 다시 문자열로 만듦
+
+
+/* 
+    *** 기억할 것 ***
+
+    JSON.parse()    - JSON 객체로 파싱
+    JSON.stringify()- JSON 객체에 맞는 문자열 형식으로 바꿔준다.
+*/
+    </script>
+</body>
+
+</html>
