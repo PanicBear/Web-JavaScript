@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var times = document.querySelectorAll('.video-thumbnail-overlay-bottom-group');
+        var duration = 0;
+        var sec = 0;
+        var min = 0;
+        var hour = 0;
+
+        for (var i = 0; i < times.length; i++) {
+            var t = times[i];
+            var tmp = t.textContent.split(":");
+
+            sec = tmp.pop();
+            min = tmp.pop();
+            hour = tmp.pop();
+            duration += parseInt(sec) + parseInt(min) * 60;
+
+            if (hour !== undefined) {
+                duration += hour * 3600;
+            }
+        }
+
+        sec = duration % 60;
+        min %= (duration - sec) / 60;
+        hour = (duration - duration % 3600) / 3600
+
+        alert("총 재생시간은 : " + hour + "시간 " + min + "분 " + sec + "초입니다.");
+
+        // 모바일용 재생목록 총 길이를 확인하는 코드
+        // pc에서 m.youtube.com 접속하면 됨.
+        // 개발자 모드 켜고 새로고침 하니까 계속 넘어가서 이거로 짬
+    </script>
+</body>
+
+</html>
